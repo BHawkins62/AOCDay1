@@ -19,14 +19,11 @@ exit_now = False
 
 for i,value1 in enumerate(expense_report[:-1]):
     for j,value2 in enumerate(expense_report[i+1:]):
-        value_sum = value1 + value2
-        if (value3 := target - value_sum) in expense_report:
+        if (value3 := target - (value1 + value2)) in expense_report:
             print(f'Numbers found are {value1}, {value2} and {value3}')
             print('Therefore solution is: ', value1*value2*value3)
             exit_now = True 
-            break
-        if exit_now:
-            break
+            break        
     if exit_now:
         break    
 else:
